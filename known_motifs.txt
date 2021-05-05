@@ -1,0 +1,10 @@
+>Lyciumin pattern
+QP.....W
+>Legumenin pattern
+QP...Y.W
+>bicyclic cyclopeptide alkaloid pattern
+.L.Y..Y
+>Cca-like peptide pattern
+QI..W
+>stephanotic acid pattern
+QL..W
