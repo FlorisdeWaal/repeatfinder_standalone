@@ -1,6 +1,5 @@
 import argparse
 import re
-from Bio import SeqIO
 
 import scorer as sc
 import output_repeatfinder as out
@@ -52,7 +51,6 @@ def get_known_classes_from_file():
 
 def index_seq(seq,k = 3):
     kmer_dict = {}
-    seqs = SeqIO.parse(infile,'fasta')                                  
 
     for i in range(len(seq)-k):
         word = str(seq[i:i+k])
