@@ -173,7 +173,7 @@ def parse_fasta(iterator):
     return sequences
 
 if __name__ == "__main__":
-    parser = argparse.ArgumentParser("settings for ")
+    parser = argparse.ArgumentParser("\ninput(-i) and output(-o) are essential for functioning of the script.\nExample use: ")
     parser.add_argument('-i',dest='infile',help='path to the input file(fasta format)')
     parser.add_argument('-o',dest= 'output', help='path to the output file')
     parser.add_argument('--maxlen', dest='maxlen', help='set maximum pattern length')
