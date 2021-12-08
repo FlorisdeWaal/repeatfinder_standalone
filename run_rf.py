@@ -70,19 +70,18 @@ def find_top_kmer(kmer_dict):
 
     return top_kmer_word,top_kmer_hits 
 
-def create_table(seq,top_kmer_word,top_kmer_hits, cutoff= 2.5):
+def create_table(seq,top_kmer_word,top_kmer_hits, cutoff= 2.5, max_len = 15):
     table = [top_kmer_word]*len(top_kmer_hits)
     
     cont = True
     while cont:
-        cont = expand_forward(seq,top_kmer_hits,table, cutoff)
+        cont = expand_forward(seq,top_kmer_hits,table, cutoff, max_len)
 
     return table
 
-def expand_forward(seq, hits, pattern_table, cutoff):
+def expand_forward(seq, hits, pattern_table, cutoff, max_len):
 
     next_residue_list = []
-    max_len = 15
 
     for i, hit in enumerate(hits):
 
@@ -206,7 +205,7 @@ if __name__ == "__main__":
         km_occurences = check_known_classes(seqs[key],known_motifs)
         kmer_dict = index_seq(seqs[key], kmer_size)
         top_kmer_word,top_kmer_hits = find_top_kmer(kmer_dict)
-        table = create_table(seqs[key],top_kmer_word,top_kmer_hits, cutoff)
+        table = create_table(seqs[key],top_kmer_word,top_kmer_hits, cutoff, max_len)
 
         output_html = "sequence " + key + "<br>"
         has_km = False
